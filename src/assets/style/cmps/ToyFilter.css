@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
   
   .search__input {
@@ -53,4 +54,50 @@
     right: 35px;
   }
 
-  
+.filter-by {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  background: aliceblue;
+  margin-block: 15px 15px;
+  border-radius: 30px;
+  font-weight: bolder;
+  color: #646464;
+}
+
+.filter-by input {
+  border: none;
+  background-color: #ffffff;
+  color: #646464;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  width: 6em;
+  transition: all ease-in-out 0.5s;
+}
+
+.filter-by input:hover,
+.filter-by input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+#inStock {
+  margin: -20px;
+  border-radius: 30px;
+}
+
+#sortBy {
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  color: rgba(0, 0, 0, 0.727);
+}
+
+#labels {
+  width: 12em;
+}
+
+#maxPrice {
+  width: 5em;
+}

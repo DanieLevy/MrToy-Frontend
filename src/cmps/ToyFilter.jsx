@@ -28,7 +28,6 @@ export function ToyFilter({ filterBy, onSetFilter }) {
 
   return (
     <section className="toy-filter">
-      <h2>Filter</h2>
       <form>
         <div className="search">
           <input
@@ -46,54 +45,61 @@ export function ToyFilter({ filterBy, onSetFilter }) {
             </g>
           </svg>
         </div>
-        <label htmlFor="inStock">In Stock</label>
-        <input
-          type="checkbox"
-          id="inStock"
-          name="inStock"
-          checked={filterByToEdit.inStock}
-          onChange={handleChange}
-        />
-        <label htmlFor="sortBy">Sort By</label>
-        <select
-          id="sortBy"
-          name="sortBy"
-          value={filterByToEdit.sortBy}
-          onChange={handleChange}
-        >
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-          <option value="createdAt">Date</option>
-        </select>
-        <label htmlFor="maxPrice">Min Price</label>
-        <input
-          type="number"
-          id="maxPrice"
-          name="maxPrice"
-          value={filterByToEdit.maxPrice}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="labels">Labels</label>
-        <input
-          type="text"
-          id="labels"
-          name="labels"
-          value={filterByToEdit.labels}
-          onChange={handleChange}
-        />
-        {/* // support sortDir asc/desc toggle - click changes state */}
-        <button
-          onClick={(ev) => {
-            ev.preventDefault()
-            setFilterByToEdit({
-              ...filterByToEdit,
-              sortDir: filterByToEdit.sortDir === "asc" ? "desc" : "asc",
-            })
-          }}
-        >
-          {filterByToEdit.sortDir === "asc" ? "⬇" : "⬆"}
-        </button>
+        <article className="filter-by">
+          <div>
+            <label htmlFor="inStock">In Stock</label>
+            <input
+              type="checkbox"
+              id="inStock"
+              name="inStock"
+              checked={filterByToEdit.inStock}
+              onChange={handleChange}
+            />
+          </div>
+          <h1>|</h1>
+          <label htmlFor="sortBy">Sort By</label>
+          <select
+            id="sortBy"
+            name="sortBy"
+            value={filterByToEdit.sortBy}
+            onChange={handleChange}
+          >
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            <option value="createdAt">Date</option>
+          </select>
+          <h1>|</h1>
+          <label htmlFor="maxPrice">Min Price</label>
+          <input
+            type="number"
+            id="maxPrice"
+            name="maxPrice"
+            value={filterByToEdit.maxPrice}
+            onChange={handleChange}
+          />
+          <h1>|</h1>
+          <label htmlFor="labels">Labels</label>
+          <input
+            type="text"
+            id="labels"
+            name="labels"
+            placeholder="Doll, Funny.."
+            value={filterByToEdit.labels}
+            onChange={handleChange}
+          />
+          <h1>|</h1>
+          <button
+            onClick={(ev) => {
+              ev.preventDefault()
+              setFilterByToEdit({
+                ...filterByToEdit,
+                sortDir: filterByToEdit.sortDir === "asc" ? "desc" : "asc",
+              })
+            }}
+          >
+            {filterByToEdit.sortDir === "asc" ? "⬇" : "⬆"}
+          </button>
+        </article>
       </form>
     </section>
   )

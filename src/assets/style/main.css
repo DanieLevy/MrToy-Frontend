@@ -4,6 +4,7 @@
 
 /* Pages */
 @import 'pages/ToyEdit.css';
+@import 'pages/ToyIndex.css';
 
 /* Base */
 @import 'base/base.css';
