@@ -37,7 +37,7 @@ function getEmptyToy() {
   return {
     name: utilService.makeLorem(3),
     price: utilService.getRandomIntInclusive(10, 100),
-    labels: ["Doll", "Battery Powered", "Baby"],
+    labels: utilService.getRandomLabels(),
     createdAt: Date.now(),
     inStock: utilService.getRandomIntInclusive(0, 1) ? true : false,
   }
@@ -46,7 +46,7 @@ function getEmptyToy() {
 function getDefaultFilter() {
   return {
     txt: "",
-    inStock: true,
+    inStock: false,
     sortBy: "name",
     maxPrice: 0,
     labels: [],
