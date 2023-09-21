@@ -1,0 +1,47 @@
+.toy-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    }
+
+.preview-btn {
+    }
+
+    .stock-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30px;
+        border-radius: 0 0 10px 10px;
+        color: #000;
+        font-size: 0.7em;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+        left: 82px;
+        top: -150px;
+        margin-block-end: 10px;
+        animation: pulse 1s infinite;
+    }
+
+    .stock-label.out {
+        color: #ff4848;
+        left: 82px;
+        top: -150px;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+      }
