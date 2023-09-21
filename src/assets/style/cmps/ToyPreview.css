@@ -8,11 +8,38 @@
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: #faf8ff;
     transition: all 0.2s ease-in-out;
     }
 
-.preview-btn {
+.toy-preview-btns {
+    margin-block-end: 10px;
+}
+
+.toy-preview-btns button {
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    background-color: transparent;
+    border: 1px solid rgba(78, 78, 78, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 12px;
+}
+
+.toy-preview-btns button:hover {
+    background-color: rgba(78, 78, 78, 0.5);
+    color: white;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+
+
+    .toy-preview-img {
+        width: 60px;
+        position: relative;
+        top: -.5em;
     }
 
     .stock-label {
@@ -28,16 +55,14 @@
         font-weight: 700;
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
-        left: 82px;
-        top: -150px;
         margin-block-end: 10px;
         animation: pulse 1s infinite;
+        right: -8em;
     }
 
     .stock-label.out {
         color: #ff4848;
-        left: 82px;
-        top: -150px;
+        margin-inline-end: 20px;
     }
 
     @keyframes pulse {
@@ -45,3 +70,57 @@
         50% { opacity: 0.5; }
         100% { opacity: 1; }
       }
+
+.labels-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-block-end: 10px;
+}
+
+
+      .label {
+        background-color: cornflowerblue;
+        color: white;
+        padding: 3px;
+        margin: 2px;
+        font-size: 10px;
+        font-weight: bold;
+        padding-inline-start: 5px;
+        padding-inline-end: 5px;
+        border-radius: 10px;
+    
+      }
+
+.label.on-wheels {
+    background-color: #ff4848c2;
+}
+
+.label.box-game {
+    background-color: #ceff48be;
+}
+
+.label.art {
+    background-color: #48bfffb6;
+}
+
+.label.baby {
+    background-color: #33b49c9d;
+}
+
+.label.doll {
+    background-color: #ff48e79b;
+}
+
+.label.puzzle {
+    background-color: #7048ff9f;
+}
+
+.label.outdoor {
+    background-color: #48ff639c;
+}
+
+.label.battery-powered {
+    background-color: #ffa048a4;
+}
