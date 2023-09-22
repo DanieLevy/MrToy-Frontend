@@ -1,6 +1,7 @@
 import { toyService } from "../../services/toy.service.js"
 
 export const SET_TOYS = "SET_TOYS"
+export const SET_TOYS_BEFORE_SLICE = "SET_TOYS_BEFORE_SLICE"
 export const REMOVE_TOY = "REMOVE_TOY"
 export const ADD_TOY = "ADD_TOY"
 export const UPDATE_TOY = "UPDATE_TOY"
@@ -12,6 +13,7 @@ export const TOY_UNDO = "TOY_UNDO"
 
 const initialState = {
   toys: [],
+  toysBeforeSlice: 0,
   lastToys: [],
   filterBy: toyService.getDefaultFilter(),
   isLoading: false,
@@ -25,6 +27,9 @@ export function toyReducer(state = initialState, action) {
       lastToys = [...state.toys]
       return { ...state, toys: action.toys, lastToys }
 
+    case SET_TOYS_BEFORE_SLICE:
+      return { ...state, toysBeforeSlice: action.toysBeforeSlice }
+       
     case REMOVE_TOY:
       lastToys = [...state.toys]
       toys = state.toys.filter((toy) => toy._id !== action.toyId)

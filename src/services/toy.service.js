@@ -51,5 +51,6 @@ function getDefaultFilter() {
     maxPrice: 0,
     labels: [],
     sortDir: "asc",
+    pageIdx: 1,
   }
 }

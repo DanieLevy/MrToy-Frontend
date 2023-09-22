@@ -6,22 +6,20 @@ import { useEffect } from "react"
 import { loadToys, removeToy, saveToy } from "../store/actions/toy.actions.js"
 import { toyService } from "../services/toy.service.js"
 import { SET_FILTER_BY } from "../store/reducers/toy.reducer.js"
+import { Pagination } from "@mui/material"
 
 export function ToyIndex() {
-
   const dispatch = useDispatch()
   const toys = useSelector((storeState) => storeState.toyModule.toys)
   const filterBy = useSelector((storeState) => storeState.toyModule.filterBy)
   const isLoading = useSelector((storeState) => storeState.toyModule.isLoading)
+  const toysBeforeSlice = useSelector((storeState) => storeState.toyModule.toysBeforeSlice)
 
   useEffect(() => {
-    console.log("useEffect - loadToys");
-    loadToys()
-        .catch((err) => {
-            console.log("err:", err)
-            showErrorMsg("Cannot load cars")
+    loadToys().catch((err) => {
+      console.log("err:", err)
+      showErrorMsg("Cannot load cars")
     })
-
   }, [filterBy])
 
   function onRemoveToy(toyId) {
@@ -47,36 +45,14 @@ export function ToyIndex() {
       })
   }
 
-function onSetFilter(filterBy) {
-  dispatch({ type: SET_FILTER_BY, filterBy }) 
-}
+  function onSetFilter(filterBy) {
+    dispatch({ type: SET_FILTER_BY, filterBy })
+  }
 
-  // function onEditCar(car) {
-  //     const price = +prompt('New price?', car.price)
-  //     const carToSave = { ...car, price }
-  //     saveCar(carToSave)
-  //         .then(savedCar => {
-  //             showSuccessMsg(`Car updated to price: $${savedCar.price}`)
-  //         })
-  //         .catch(err => {
-  //             console.log('Cannot update car', err)
-  //             showErrorMsg('Cannot update car')
-  //         })
-  // }
-
-  // function addToCart(car) {
-  //     console.log(`Adding ${car.vendor} to Cart`)
-  //     dispatch({ type: ADD_CAR_TO_CART, car })
-  //     showSuccessMsg('Added to Cart')
-  // }
-
-  // function onSetFilter(filterBy) {
-  //     dispatch({ type: SET_FILTER_BY, filterBy })
-  // }
-
-  // TODO:
-  // filterBy
-  // add random toy
+  function onPageChange(pageIdx) {
+    console.log('pageIdx:', pageIdx);
+    onSetFilter({ ...filterBy, pageIdx })
+  }
 
   if (isLoading) return <div>Loading...</div>
 
@@ -86,6 +62,13 @@ function onSetFilter(filterBy) {
       <button onClick={onAddToy}>Add Toy</button>
       <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
       <ToyList toys={toys} key={toys._id} onRemoveToy={onRemoveToy} />
+
+      <Pagination
+        count={Math.ceil(toysBeforeSlice / 6)}
+        variant="outlined"
+        shape="rounded"
+        onChange={(ev, page) => onPageChange(page)}
+      />
     </div>
   )
 }

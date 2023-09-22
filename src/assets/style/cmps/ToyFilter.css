@@ -54,7 +54,7 @@
     right: 35px;
   }
 
-.filter-by {
+/* .filter-by {
   display: flex;
   align-items: center;
   text-align: center;
@@ -100,4 +100,27 @@
 
 #maxPrice {
   width: 5em;
+} */
+
+
+.css-10egq61 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: aliceblue;
+  margin-block: 15px 15px;
+  border-radius: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-block-start: 10px;
+  padding-block-end: 10px;
+}
+
+.css-10egq61 > * div {
+max-height: 45px;
+}
+
+.labels-input {
+  min-width: 200px;
+  max-width: 200px;
 }
