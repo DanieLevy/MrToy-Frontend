@@ -1,127 +1,122 @@
-.toy-preview {
+
+.toy-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    height: 250px;
-    margin: 10px;
+    align-items: start;
+    justify-content: flex-end;
+    gap: 15px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    background-color: #faf8ff;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-    }
-
-.toy-preview-btns {
-    margin-block-end: 10px;
-}
-
-.toy-preview-btns button {
-    font-family: 'Quicksand', sans-serif;
-    color: black;
-    background-color: transparent;
-    border: 1px solid rgba(78, 78, 78, 0.5);
-    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    font-size: 12px;
+    width: 285px;
+    height: 275px;
+    transition: all 0.2s ease;
 }
 
-.toy-preview-btns button:hover {
-    background-color: rgba(78, 78, 78, 0.5);
-    color: white;
-    font-weight: bold;
-    transition: all .3s ease-in-out;
-}
-
-
-
-    .toy-preview-img {
-        width: 60px;
-        position: relative;
-        top: -.5em;
+    .toy-card img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+        align-self: center;
     }
-
-    .stock-label {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 30px;
-        border-radius: 0 0 10px 10px;
-        color: #000;
-        font-size: 0.7em;
-        font-weight: 700;
-        text-transform: uppercase;
-        transition: all 0.2s ease-in-out;
-        margin-block-end: 10px;
-        animation: pulse 1s infinite;
-        right: -8em;
-    }
+  
+  .toy-card:hover {
+    background: #f8f8f8cd;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    transition: all 0.2s ease;
+  }
+  
+  .stock-label {
+    position: absolute;
+    font-weight: 900;
+    top: 5px;
+    right: 10px;
+    animation: blink 1.5s ease infinite;
+  }
 
     .stock-label.out {
-        color: #ff4848;
-        margin-inline-end: 20px;
+        color: red;
     }
 
-    @keyframes pulse {
-        0% { opacity: 1; }
-        50% { opacity: 0.5; }
-        100% { opacity: 1; }
-      }
+    .stock-label.in {
+        color: green;
+        animation: none;
+    }
 
-.labels-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-block-end: 10px;
+    @keyframes blink {
+        0% {
+        opacity: 0.2;
+        }
+        50% {
+        opacity: 1;
+        }
+        100% {
+        opacity: 0.2;
+        }
+    }
+
+  .toy-labels span {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #eee;
+    border-radius: 20px;
+    font-size: 10px;
+    margin-left: 5px;
+    font-weight: bold;
+    margin-block-start: 3px;
+    animation: slide-in 0.5s ease forwards;
 }
-
-
-      .label {
-        background-color: cornflowerblue;
-        color: white;
-        padding: 3px;
-        margin: 2px;
-        font-size: 10px;
-        font-weight: bold;
-        padding-inline-start: 5px;
-        padding-inline-end: 5px;
-        border-radius: 10px;
+  
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .toy-price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    font-weight: bold;
     
-      }
+    animation: zoom-in 0.5s ease forwards;
+  }
+  
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
-.label.on-wheels {
-    background-color: #ff4848c2;
-}
+  .toy-preview-btns {
+    align-self: center;
+  }
 
-.label.box-game {
-    background-color: #ceff48be;
-}
+    .toy-preview-btns button {
+        border-radius: 4px;
+        padding: 8px 10px;
+        background: #eee;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
 
-.label.art {
-    background-color: #48bfffb6;
-}
-
-.label.baby {
-    background-color: #33b49c9d;
-}
-
-.label.doll {
-    background-color: #ff48e79b;
-}
-
-.label.puzzle {
-    background-color: #7048ff9f;
-}
-
-.label.outdoor {
-    background-color: #48ff639c;
-}
-
-.label.battery-powered {
-    background-color: #ffa048a4;
-}
+    .toy-preview-btns button:hover {
+        background: #ddd;
+    }

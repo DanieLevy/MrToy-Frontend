@@ -2,37 +2,43 @@ import { Link, useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { REMOVE_TOY } from "../store/reducers/toy.reducer"
 import TOY_LOGO from "../assets/img/toy-logo.png"
+import { utilService } from "../services/util.service"
+
 
 export function ToyPreview({ toy, onRemoveToy }) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const labels = utilService.getLabels()
+
   // to show the toy details : name, price, labels, instock
   return (
-    <section className="toy-preview-container">
-      <div className="toy-preview">
-      {toy.inStock ? (
-        <h4 className="stock-label in">In Stock</h4>
+      <div className="toy-card">
+        <div className="toy-price">${toy.price}</div>
+
+        {toy.inStock ? (
+          <h4 className="stock-label in">In Stock</h4>
         ) : (
           <h4 className="stock-label out">Out of Stock</h4>
-          )}
-        <img src={TOY_LOGO} alt={toy.name} className="toy-preview-img" />
-        <h3>{toy.name}</h3>
-        <h4>{toy.price}$</h4>
+        )}
 
-        <article className="labels-container">
-        {toy.labels &&
-          toy.labels.map((label) => {
-            const className = `label ${label
-              .replace(/\s+/g, "-")
-              .toLowerCase()}`
-            return (
-              <span key={label} className={className}>
-                {label}
-              </span>
-            )
-          })}
-        </article>
+        <img src={TOY_LOGO} alt={toy.name} className="toy-img" />
+
+        <div className="toy-name">{toy.name}</div>
+
+        <div className="toy-labels">
+        {toy.labels.map(toyLabel => {
+          const label = labels.find(l => l.name === toyLabel)
+          return (
+            <span 
+              key={toyLabel} 
+              style={{backgroundColor: label.color}}
+            >
+              {toyLabel}
+            </span>  
+          )
+        })}
+      </div>
 
         <article className="toy-preview-btns">
           <button
@@ -51,8 +57,6 @@ export function ToyPreview({ toy, onRemoveToy }) {
             Delete
           </button>
         </article>
-
       </div>
-    </section>
   )
 }

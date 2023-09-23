@@ -8,6 +8,7 @@ export const utilService = {
   debounce,
   getAssetSrc,
   getRandomLabels,
+  getLabels
 }
 
 function makeId(length = 6) {
@@ -143,4 +144,17 @@ function getRandomLabels() {
     }
   }
   return labelsArr
+}
+
+export function getLabels() {
+  return [
+    {name: "On wheels", color: "#a2d2ff"}, 
+    {name: "Box game", color: "#bde0fe"},
+    {name: "Art", color: "#ffb3ba"},
+    {name: "Baby", color: "#ffdfba"},
+    {name: "Doll", color: "#ffffba"},
+    {name: "Puzzle", color: "#baffc9"},
+    {name: "Outdoor", color: "#bae1ff"},
+    {name: "Battery Powered", color: "#ffc6ff"}
+  ]
 }
