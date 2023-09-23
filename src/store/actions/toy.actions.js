@@ -37,7 +37,14 @@ export function loadToys() {
 // REMOVE
 export function removeToy(toyId) {
   store.dispatch({ type: REMOVE_TOY, toyId })
-  return toyService.remove(toyId).catch((err) => {
+  return toyService.remove(toyId)
+  .then(() => {
+    // render the updated list with timeout
+    setTimeout(() => {
+      loadToys()
+    }, 250)
+  })
+  .catch((err) => {
     store.dispatch({ type: TOY_UNDO })
     console.log("TOY ACTION -> Cannot remove toy", err)
     throw err

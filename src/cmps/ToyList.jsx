@@ -1,30 +1,26 @@
-import PropTypes from 'prop-types'
-
 import { ToyPreview } from './ToyPreview.jsx'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 export function ToyList({ toys, onRemoveToy }) {
 
     return (
-        <div className="toy-list">
-        {toys.map(toy => (
-          <ToyPreview 
-            toy={toy}
-            key={toy._id} 
-            onRemoveToy={onRemoveToy}
-          />
-        ))}
-      </div>
-        // <ul className="car-list">
-        //     {cars.map(car =>
-        //         <li className="car-preview" key={car._id}>
-        //             <CarPreview car={car} />
-        //             <div>
-        //                 <button onClick={() => onRemoveCar(car._id)}>x</button>
-        //                 <button onClick={() => onEditCar(car)}>Edit</button>
-        //             </div>
-        //             <button className="buy" onClick={() => addToCart(car)}>Add to Cart</button>
-        //         </li>
-        //     )}
-        // </ul>
+      
+<TransitionGroup component="div" className="toy-list">
+
+{toys.map(toy => (
+
+  <CSSTransition 
+    key={toy._id} 
+    timeout={150}
+    classNames="toy"
+    unmountOnExit
+    appear
+  >
+    <ToyPreview toy={toy} onRemoveToy={onRemoveToy} />
+  </CSSTransition>
+
+))}
+
+</TransitionGroup>
     )
 }

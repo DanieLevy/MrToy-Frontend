@@ -12,3 +12,25 @@
     
     transition: all 0.5s ease;
 }
+
+/* Animations */
+.toy-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.toy-enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 150ms ease;
+}
+
+.toy-exit {
+    opacity: 1;
+}
+
+.toy-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 150ms ease;
+}
