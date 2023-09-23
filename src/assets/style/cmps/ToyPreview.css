@@ -44,8 +44,11 @@
     }
 
     .stock-label.in {
-        color: green;
+        color: rgb(255, 255, 255);
         animation: none;
+        background-color: rgb(155, 225, 51);
+        padding: 3px 6px;
+        border-radius: 10px;
     }
 
     @keyframes blink {
@@ -111,10 +114,11 @@
     .toy-preview-btns button {
         border-radius: 4px;
         padding: 8px 10px;
-        background: #eee;
+        background: transparent;
         font-size: 14px;
         cursor: pointer;
         transition: all 0.2s ease;
+        border: 0.5px solid #c2c2c2ba;
     }
 
     .toy-preview-btns button:hover {
