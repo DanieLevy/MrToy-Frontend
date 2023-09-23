@@ -29,8 +29,8 @@ export default function App() {
               <Route element={<ToyEdit />} path="/toy/edit/:toyId" />
               <Route path="*" element={<h1>Not Found!</h1>} />
             </Routes>
-          </main>
           <AppFooter />
+          </main>
         </section>
       </Router>
     </Provider>

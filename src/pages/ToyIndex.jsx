@@ -63,9 +63,9 @@ export function ToyIndex() {
 
   return (
     <section className="toy-index">
-      <h3>Toy Index</h3>
-      <button onClick={onAddToy}>Add Toy</button>
+      <h3>Our Toys</h3>
       <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+      <button onClick={onAddToy}>Add Toy</button>
       <ToyList toys={toys} key={toys._id} onRemoveToy={onRemoveToy} />
       
       <section className="pagination-container">
@@ -80,7 +80,7 @@ export function ToyIndex() {
           )}
         />
       </section>
-      
+
     </section>
   )
 }

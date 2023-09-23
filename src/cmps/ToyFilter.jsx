@@ -63,7 +63,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
   return (
     // BUILD WITH MUI COMPONENTS
     <Box sx={{}}>
-      <Typography variant="h6">Filters</Typography>
+      {/* <Typography variant="h6">Filters</Typography> */}
 
       <Box component="form" 
       className="toy-filter"
