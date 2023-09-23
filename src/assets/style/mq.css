@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    .toy-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pagination-container {
+        width: 100%;
+    }
+}

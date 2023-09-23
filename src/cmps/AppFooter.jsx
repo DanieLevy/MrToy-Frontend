@@ -6,8 +6,14 @@ import { useDispatch, useSelector } from 'react-redux'
 export function AppFooter() {
     return (
         <footer>
-            <h2>App Footer</h2>
+            <div className='copyrights-container'>
+
+            <h2>&copy; Copyrights 2023{' '}<span className='copyrights'>Daniel Levy</span></h2>
+            </div>
+            <div>
+
             <h3>Toys in Stock: {useSelector((state) => state.toyModule.toys.length)}</h3>
+            </div>
             <UserMsg />
         </footer>
     )

@@ -1,11 +1,34 @@
 .app-header {
-  background-color: var(--clr1);
-  color: var(--clr1bg);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #242424;
+  color: whitesmoke;
   padding: 1em;
+  font-weight: 900;
+  width: 100%;
+  height: 50px;
+  z-index: 100;
 }
 
-@media(max-width: 720px) {
-  .app-header {
-    color: var(--clr2bg);
-  }
+.app-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.app-header nav a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.app-header nav a:hover {
+  color: rgba(210, 210, 214, 0.979);
+}
+
+.app-header nav a.active {
+  color: rgb(74, 186, 255);
 }

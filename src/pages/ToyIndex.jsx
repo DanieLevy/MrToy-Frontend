@@ -6,14 +6,19 @@ import { useEffect } from "react"
 import { loadToys, removeToy, saveToy } from "../store/actions/toy.actions.js"
 import { toyService } from "../services/toy.service.js"
 import { SET_FILTER_BY } from "../store/reducers/toy.reducer.js"
-import { Pagination } from "@mui/material"
+import { Pagination, PaginationItem } from "@mui/material"
+
+import ArrowBackIcon from "@mui/icons-material/ArrowBack"
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 
 export function ToyIndex() {
   const dispatch = useDispatch()
   const toys = useSelector((storeState) => storeState.toyModule.toys)
   const filterBy = useSelector((storeState) => storeState.toyModule.filterBy)
   const isLoading = useSelector((storeState) => storeState.toyModule.isLoading)
-  const toysBeforeSlice = useSelector((storeState) => storeState.toyModule.toysBeforeSlice)
+  const toysBeforeSlice = useSelector(
+    (storeState) => storeState.toyModule.toysBeforeSlice
+  )
 
   useEffect(() => {
     loadToys().catch((err) => {
@@ -50,25 +55,32 @@ export function ToyIndex() {
   }
 
   function onPageChange(pageIdx) {
-    console.log('pageIdx:', pageIdx);
+    console.log("pageIdx:", pageIdx)
     onSetFilter({ ...filterBy, pageIdx })
   }
 
   if (isLoading) return <div>Loading...</div>
 
   return (
-    <div>
+    <section className="toy-index">
       <h3>Toy Index</h3>
       <button onClick={onAddToy}>Add Toy</button>
       <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} />
       <ToyList toys={toys} key={toys._id} onRemoveToy={onRemoveToy} />
-
-      <Pagination
-        count={Math.ceil(toysBeforeSlice / 6)}
-        variant="outlined"
-        shape="rounded"
-        onChange={(ev, page) => onPageChange(page)}
-      />
-    </div>
+      
+      <section className="pagination-container">
+        <Pagination
+          count={Math.ceil(toysBeforeSlice / 6)}
+          onChange={(ev, page) => onPageChange(page)}
+          renderItem={(item) => (
+            <PaginationItem
+              slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+              {...item}
+            />
+          )}
+        />
+      </section>
+      
+    </section>
   )
 }

@@ -1,7 +1,7 @@
 .main-layout {
   margin: 0 auto;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  /* padding-left: 1.6rem;
+  padding-right: 1.6rem; */
 }
 
 .container {
@@ -9,12 +9,3 @@
   padding: 1em;
   margin: auto;
 }
-
-footer {
-  background-color: var(--clr1);
-  color: var(--clr1bg);
-  padding: 1em;
-  text-align: center;
-}
-
-
