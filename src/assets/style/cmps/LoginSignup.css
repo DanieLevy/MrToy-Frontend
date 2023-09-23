@@ -1,0 +1,162 @@
+.login-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.973);
+    padding: 1em;
+    width: 400px;
+    height: 315px;
+    z-index: 100;
+    border-radius: 15px;
+    animation: modal .5s ease-out;
+}
+
+@keyframes modal {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.login-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ccc;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.input-container > span {
+    color: #ccc;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s;
+}
+
+::placeholder {
+    color: #ccc;
+    margin-inline-start: 1em;
+}
+
+.login-form input {
+    box-sizing: border-box;
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: #ccc;
+    padding: 12px 6px 12px 36px;
+    font-size: 16px;
+    outline: none;
+    caret-color: rgb(74, 186, 255);
+}
+
+.login-form input:focus {
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right, rgb(74, 186, 255), rgb(74, 186, 255));
+    border-image-slice: 1;
+}
+
+.login-form input:focus + span {
+    color: rgb(74, 186, 255);
+}
+
+.login-form button {
+    background: transparent;
+    border: none;
+    border-radius: 30px;
+    color: #ccc;
+    font-size: 16px;
+    padding: 16px 36px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.65);
+    transition: all 0.3s;
+}
+
+.login-form button:hover {
+    background-color: rgb(74, 186, 255);
+    color: #fff;
+    box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.65);
+    transition: all 0.3s;
+}
+
+.login-form button:active {
+    transform: scale(0.95);
+}
+
+.login-form button:focus {
+    outline: none;
+}
+
+.login-form button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.login-form button:disabled:hover {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login-form a {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.login-form a:hover {
+    color: rgb(74, 186, 255);
+}
+
+.login-modal-header { 
+    color : #ccc;
+    font-size: 1.1em;
+
+}
+
+.login-form a:active {
+    transform: scale(0.95);
+}
+
+.login-modal.signup {
+    height: 380px;
+}

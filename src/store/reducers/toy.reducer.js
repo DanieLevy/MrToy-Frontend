@@ -10,6 +10,7 @@ export const SET_FILTER_BY = "SET_FILTER_BY"
 export const SET_IS_LOADING = "SET_IS_LOADING"
 
 export const TOY_UNDO = "TOY_UNDO"
+export const TOGGLE_MODAL = "TOGGLE_MODAL"
 
 const initialState = {
   toys: [],
@@ -54,6 +55,9 @@ export function toyReducer(state = initialState, action) {
     // Loading
     case SET_IS_LOADING:
       return { ...state, isLoading: action.isLoading }
+
+      case TOGGLE_MODAL:
+        return { ...state, isModalShown: !state.isModalShown }
       
     // Default
     default:

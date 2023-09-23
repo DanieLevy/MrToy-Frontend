@@ -1,6 +1,3 @@
-
-
-import { UserMsg } from './UserMsg.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 
 export function AppFooter() {
@@ -14,7 +11,7 @@ export function AppFooter() {
 
             <h3>Toys in Stock: {useSelector((state) => state.toyModule.toys.length)}</h3>
             </div>
-            <UserMsg />
+
         </footer>
     )
 }
