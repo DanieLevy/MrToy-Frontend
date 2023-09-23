@@ -13,8 +13,24 @@
     cursor: pointer;
     width: 285px;
     height: 275px;
+    animation: slide-in 1s ease forwards;
     transition: all 0.2s ease;
 }
+
+@keyframes slide-in {
+    from {
+      opacity: 0.1;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .toy-card:hover {
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
 
     .toy-card img {
         width: 100px;
@@ -23,14 +39,6 @@
         border-radius: 4px;
         align-self: center;
     }
-  
-  .toy-card:hover {
-    background: #f8f8f8cd;
-    color: rgb(0, 0, 0);
-    font-weight: 900;
-    transition: all 0.2s ease;
-  }
-  
   .stock-label {
     position: absolute;
     font-weight: 900;

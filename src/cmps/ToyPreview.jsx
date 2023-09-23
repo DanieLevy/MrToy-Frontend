@@ -13,7 +13,7 @@ export function ToyPreview({ toy, onRemoveToy }) {
 
   // to show the toy details : name, price, labels, instock
   return (
-      <div className="toy-card toy">
+      <div className="toy-card">
         <div className="toy-price">${toy.price}</div>
 
         {toy.inStock ? (
