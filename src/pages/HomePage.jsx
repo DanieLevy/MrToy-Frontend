@@ -1,4 +1,4 @@
-import BG_IMG from "../assets/img/hero-store.jpeg"
+import BG_IMG from "../assets/img/hero-store.png"
 
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink, useNavigate } from "react-router-dom"
