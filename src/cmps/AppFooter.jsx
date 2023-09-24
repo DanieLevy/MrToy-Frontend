@@ -9,7 +9,7 @@ export function AppFooter() {
             </div>
             <div>
 
-            <h3>Toys in Stock: {useSelector((state) => state.toyModule.toys.length)}</h3>
+            <h3>Toys in Stock: {useSelector((state) => state.toyModule.toysBeforeSlice.length)}</h3>
             </div>
 
         </footer>

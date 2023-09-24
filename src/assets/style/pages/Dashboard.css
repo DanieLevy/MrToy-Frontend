@@ -1,0 +1,32 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+
+.toy-labels-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 25px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+
+.doughnut {
+    max-width: 400px;
+    max-height: 400px;
+    padding: auto;
+    margin: auto;
+}

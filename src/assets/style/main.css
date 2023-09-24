@@ -3,8 +3,11 @@
 @import 'setup/typography.css';
 
 /* Pages */
+@import 'pages/HomePage.css';
 @import 'pages/ToyEdit.css';
 @import 'pages/ToyIndex.css';
+@import 'pages/Dashboard.css';
+@import 'pages/AboutUs.css';
 
 /* Base */
 @import 'base/base.css';

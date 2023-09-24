@@ -14,7 +14,7 @@ export const TOGGLE_MODAL = "TOGGLE_MODAL"
 
 const initialState = {
   toys: [],
-  toysBeforeSlice: 0,
+  toysBeforeSlice: [],
   lastToys: [],
   filterBy: toyService.getDefaultFilter(),
   isLoading: false,

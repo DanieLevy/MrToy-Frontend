@@ -13,6 +13,7 @@ import { ToyIndex } from "./pages/ToyIndex"
 import { AboutUs } from "./pages/AboutUs"
 import { ToyDetails } from "./pages/ToyDetails"
 import { ToyEdit } from "./pages/ToyEdit.jsx"
+import { Dashboard } from "./pages/Dashboard.jsx"
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
               <Route element={<ToyIndex />} path="/toy" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
               <Route element={<ToyEdit />} path="/toy/edit/:toyId" />
+              <Route element={<Dashboard />} path="/dashboard" />
               <Route path="*" element={<h1>Not Found!</h1>} />
             </Routes>
           <AppFooter />

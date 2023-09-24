@@ -17,7 +17,7 @@ export function ToyIndex() {
   const filterBy = useSelector((storeState) => storeState.toyModule.filterBy)
   const isLoading = useSelector((storeState) => storeState.toyModule.isLoading)
   const toysBeforeSlice = useSelector(
-    (storeState) => storeState.toyModule.toysBeforeSlice
+    (storeState) => storeState.toyModule.toysBeforeSlice.length
   )
 
   useEffect(() => {
