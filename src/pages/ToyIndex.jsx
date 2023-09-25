@@ -70,7 +70,7 @@ export function ToyIndex() {
       
       <section className="pagination-container">
         <Pagination
-          count={Math.ceil(toysBeforeSlice / 6)}
+          count={Math.ceil(toysBeforeSlice / 8)}
           onChange={(ev, page) => onPageChange(page)}
           renderItem={(item) => (
             <PaginationItem

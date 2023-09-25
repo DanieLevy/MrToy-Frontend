@@ -8,6 +8,7 @@
 @import 'pages/ToyIndex.css';
 @import 'pages/Dashboard.css';
 @import 'pages/AboutUs.css';
+@import 'pages/ToyDetails.css';
 
 /* Base */
 @import 'base/base.css';

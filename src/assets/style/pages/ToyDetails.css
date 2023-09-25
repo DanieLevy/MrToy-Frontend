@@ -1,0 +1,40 @@
+.toy-details-container {
+display: flex;
+justify-content: center;
+padding: 25px;
+}
+
+.toy-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 60vw;
+}
+
+.toy-details span {
+    font-weight: bold;
+}
+
+.toy-details a {
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    width: 50px;
+}
+
+.toy-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+    place-self: center;
+}
+
+.toy-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
