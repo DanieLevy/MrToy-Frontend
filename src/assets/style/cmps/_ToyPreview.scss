@@ -1,0 +1,143 @@
+.toy-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  gap: 15px;
+  border: 5px solid #f8f8f8;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 285px;
+  height: 275px;
+  animation: slide-in 1s ease forwards;
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  & img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    align-self: center;
+  }
+
+  & .toy-price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+
+    animation: zoom-in 0.5s ease forwards;
+  }
+
+  & .stock-label {
+    position: absolute;
+    font-weight: 900;
+    top: 5px;
+    right: 10px;
+    animation: blink 1.5s ease infinite;
+
+    &.out {
+      color: red;
+    }
+
+    &.in {
+      color: rgb(255, 255, 255);
+      animation: none;
+      background-color: lightgreen;
+      padding: 3px 6px;
+      border-radius: 10px;
+    }
+  }
+
+  & .toy-name {
+    font-size: 16px;
+    font-weight: bold;
+    animation: slide-in 0.5s ease forwards;
+  }
+
+  & .toy-preview-btns {
+    border-top: 1px solid #eee;
+    align-self: center;
+
+    & button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+      color: #aaa;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  & .toy-labels {
+    & span {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #eee;
+      border-radius: 20px;
+      font-size: 10px;
+      margin-left: 5px;
+      font-weight: bold;
+      margin-block-start: 3px;
+      animation: slide-in 0.5s ease forwards;
+      color: #333;
+    }
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0.1;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}

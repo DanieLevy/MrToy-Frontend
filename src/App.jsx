@@ -2,7 +2,7 @@
 import { Provider } from "react-redux"
 import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { store } from "./store/store"
-import "./assets/style/main.css"
+import "./assets/style/main.scss"
 
 // Import Pages
 import { AppHeader } from "./cmps/AppHeader"

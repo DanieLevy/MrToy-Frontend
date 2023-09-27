@@ -31,6 +31,9 @@ p {
 a {
   text-decoration: none;
   color: unset;
+  &.active {
+      text-decoration: overline;
+    }
 }
 
 
@@ -47,11 +50,6 @@ object {
 .debug * {
   outline: 1px solid gold
 }
-
-a.active {
-  text-decoration: overline;
-}
-
 
 
 .popup-menu {
