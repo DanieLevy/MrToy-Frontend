@@ -1,7 +1,7 @@
 .toy-details-container {
-display: flex;
-justify-content: center;
-padding: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
 }
 
 .toy-details {
@@ -23,6 +23,21 @@ padding: 25px;
     text-decoration: none;
     color: black;
     width: 50px;
+    margin-inline-end: 10px;
+}
+
+.toy-details a:hover {
+    background-color: black;
+    color: white;
+}
+
+.toy-details a:active {
+    background-color: black;
+    color: white;
+}
+
+.toy-details-btns {
+    margin-block-start: 10px;
 }
 
 .toy-img {

@@ -22,7 +22,7 @@ export function ToyPreview({ toy, onRemoveToy }) {
           <h4 className="stock-label out">Out of Stock</h4>
         )}
 
-        <img src={TOY_LOGO} alt={toy.name} className="toy-img" />
+        <img src={toy.imgUrl} alt="" />
 
         <div className="toy-name">{toy.name}</div>
 

@@ -6,7 +6,7 @@
     align-items: start;
     justify-content: flex-end;
     gap: 15px;
-    border: 1px solid #ccc;
+    border: 5px solid #f8f8f8;
     border-radius: 10px;
     padding: 5px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -54,7 +54,7 @@
     .stock-label.in {
         color: rgb(255, 255, 255);
         animation: none;
-        background-color: rgb(155, 225, 51);
+        background-color: lightgreen;
         padding: 3px 6px;
         border-radius: 10px;
     }
